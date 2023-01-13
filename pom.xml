@@ -12,6 +12,7 @@
     <modules>
         <module>ModuleLesson26</module>
         <module>lesson28</module>
+        <module>servlets</module>
     </modules>
 
     <dependencies>
