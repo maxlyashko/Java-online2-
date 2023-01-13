@@ -18,6 +18,7 @@ public class Main {
         MyThread thread2 = new MyThread ( counter2 );
         thread1.start ( );
         thread2.start ( );
+        thread1.join ();
         thread2.join ( );
 
         System.out.println ( thread1.counter.getCounter () + thread2.counter.getCounter () );
