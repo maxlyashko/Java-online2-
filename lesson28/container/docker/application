@@ -1,7 +1,0 @@
-FROM amazoncorretto:17.0.5-alpine
-RUN addgroup -S java-group && adduser -S java-user -G java-group
-USER java-user:java-group
-ARG JAR_FILE=application.jar
-COPY ${JAR_FILE} application.jar
-ENTRYPOINT ["java","-jar","application.jar"]
-
