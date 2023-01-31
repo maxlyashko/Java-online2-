@@ -24,10 +24,11 @@ public final class VisitService {
         visits.add ( visit );
     }
 
-    public synchronized void removeFirst () {
+    public synchronized void removeFirstAndAddVisit (Visit visit) {
         if (visits.size () == 3) {
             visits.remove ( 0 );
         }
+        add ( visit );
     }
 
 

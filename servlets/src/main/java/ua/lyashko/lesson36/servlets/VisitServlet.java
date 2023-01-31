@@ -43,8 +43,7 @@ public class VisitServlet extends HttpServlet {
         if (visit == null || visit.getName ( ) == null || visit.getDate ( ) == null || visit.getCity ( ) == null) {
             resp.sendError ( 400 );
         } else {
-            visitService.removeFirst ();
-            visitService.add ( visit );
+            visitService.removeFirstAndAddVisit (visit);
             resp.setStatus ( 201 );
         }
     }
