@@ -20,8 +20,14 @@ public final class VisitService {
     private final List<Visit> visits = new ArrayList<> ( 3 );
 
 
-    public void add ( Visit visit ) {
+    public synchronized void add ( Visit visit ) {
         visits.add ( visit );
+    }
+
+    public synchronized void removeFirst () {
+        if (visits.size () == 3) {
+            visits.remove ( 0 );
+        }
     }
 
 

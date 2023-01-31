@@ -42,11 +42,8 @@ public class VisitServlet extends HttpServlet {
         Visit visit = gson.fromJson ( req.getReader ( ) , Visit.class );
         if (visit == null || visit.getName ( ) == null || visit.getDate ( ) == null || visit.getCity ( ) == null) {
             resp.sendError ( 400 );
-        } else if (visitService.getAll ( ).size ( ) == 3) {
-            visitService.getAll ( ).remove ( 0 );
-            visitService.add ( visit );
-            resp.setStatus ( 201 );
         } else {
+            visitService.removeFirst ();
             visitService.add ( visit );
             resp.setStatus ( 201 );
         }
